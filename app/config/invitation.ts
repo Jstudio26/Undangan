@@ -43,7 +43,7 @@ export const invitation = {
 
   // --- Contact ---
   // International format, digits only, no "+" and no leading zero. Example: 62 812 3456 7890
-  whatsappNumber: "6288261223791",
+  whatsappNumber: "6285343911295",
 
   // --- Media (files live in /public) ---
   heroImage: "/images/MS1.jpeg",
@@ -53,8 +53,8 @@ export const invitation = {
 
   gallery: [
     { src: "/images/MS1.jpeg", alt: "A quiet portrait" },
-    { src: "/images/MSK2.PNG", alt: "A frame from a good day" },
-    { src: "/images/Utama.jpeg", alt: "Looking ahead" },
+    { src: "/images/MSK2.png", alt: "A frame from a good day" },
+    { src: "/images/UTAMA.jpeg", alt: "Looking ahead" },
     { src: "/images/MSK3.png", alt: "The night before seventeen" },
   ] as GalleryPhoto[],
 
