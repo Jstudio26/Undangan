@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-obsidian text-offwhite font-sans antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: #b69b67;
+    color: #080808;
+  }
+
+  h1,
+  h2 {
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  .section-pad {
+    @apply px-6 py-24 md:py-32;
+  }
+
+  .eyebrow {
+    @apply block font-sans text-[11px] uppercase tracking-[0.3em] text-silver;
+  }
+
+  /* Scroll reveal — the `.reveal` class is added by the v-reveal directive on the
+     client only, so content is always visible if JavaScript fails. */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Opening screen fade-out */
+.fade-leave-active {
+  transition: opacity 0.8s ease;
+  pointer-events: none; /* let clicks reach the content immediately */
+}
+.fade-leave-to {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .animate-bounce,
+  .animate-pulse {
+    animation: none !important;
+  }
+}
