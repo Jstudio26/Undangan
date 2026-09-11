@@ -43,7 +43,7 @@ export const invitation = {
 
   // --- Contact ---
   // International format, digits only, no "+" and no leading zero. Example: 62 812 3456 7890
-  whatsappNumber: "6285343911295",
+  whatsappNumber: "6289698152110",
 
   // --- Media (files live in /public) ---
   heroImage: "/images/MS1.jpeg",
