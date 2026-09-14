@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { nextTick, onMounted, ref } from 'vue'
 import { invitation } from '~/config/invitation'
+import { access } from '~/config/access'
 
 const entered = ref(false)
 const musicOn = ref(false)
@@ -12,6 +13,7 @@ const mainEl = ref<HTMLElement | null>(null)
 // focus and screen readers stay on the opening screen. Without JS the content is
 // simply readable and the opening overlay is hidden (see nuxt.config noscript).
 onMounted(() => {
+  if (access.locked) return
   document.body.style.overflow = 'hidden'
   if (mainEl.value) mainEl.value.inert = true
 })
@@ -50,7 +52,9 @@ function toggleMusic() {
 </script>
 
 <template>
-  <div>
+  <Locked v-if="access.locked" />
+
+  <div v-else>
     <main ref="mainEl">
       <Hero />
       <Introduction />
