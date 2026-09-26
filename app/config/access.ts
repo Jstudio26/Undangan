@@ -4,5 +4,5 @@
  * invitation. Flip it to `false` and redeploy once the client has paid.
  */
 export const access = {
-  locked: true,
+  locked: false,
 };
